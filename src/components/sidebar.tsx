@@ -51,15 +51,6 @@ const Sidebar = () => {
           <Separator />
           <SheetTitle>You</SheetTitle>
           <Link
-            href="/"
-            className={buttonVariants({
-              variant: "link",
-            })}
-          >
-            <HistoryIcon className="mr-2" />
-            History
-          </Link>{" "}
-          <Link
             href={`/dashboard?channel=${userId}`}
             className={buttonVariants({
               variant: "link",
