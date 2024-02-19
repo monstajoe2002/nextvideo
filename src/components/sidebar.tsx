@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
@@ -16,8 +17,10 @@ import {
 } from "@/components/ui/sheet";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
+import useStoreUserEffect from "@/hooks/use-store-user-effect";
 
 const Sidebar = () => {
+  const { userId } = useStoreUserEffect();
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -57,7 +60,7 @@ const Sidebar = () => {
             History
           </Link>{" "}
           <Link
-            href="/"
+            href={`/dashboard?channel=${userId}`}
             className={buttonVariants({
               variant: "link",
             })}
